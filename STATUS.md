@@ -39,7 +39,7 @@ Semua `challenge.yml` lolos validasi skema (field wajib + tipe + blok container)
 
 ## Yang masih harus dikerjakan manual
 
-1. **Flag belum ketemu** — `Forensics/iseng` dan `Web/f1`. Tidak ada di README
+1. **Flag belum ketemu** — hanya `Web/f1`. Tidak ada di README
    maupun di file mana pun; harus ditanya ke author.
 2. **Lampiran hilang** — `Forensics/go-go-mun` deskripsinya menunjuk ke arsip di
    Google Drive (ada SHA256 + password arsip di README), dan `OSINT/thing-of-eternity`
