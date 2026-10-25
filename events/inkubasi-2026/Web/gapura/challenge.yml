@@ -17,8 +17,8 @@ container:
   memoryLimit: 256
   cpuCount: 1
   storageLimit: 512
-  exposePort: 3306
+  exposePort: 80
   enableTrafficCapture: false
 
 scripts:
-  start: cd src/db && docker build -t {{.slug}} .
+  start: cd src/web && docker build -t {{.slug}} .

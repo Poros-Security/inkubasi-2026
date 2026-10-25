@@ -1,10 +1,13 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
 
 name: "Iseng"
-author: "broKen**"
+author: "broKen"
 
 description: |
-  TODO: deskripsi belum ada di README.
+  Intinya analisis traffic dan pahami TCP/IP Layer.
+
+  Beberapa soal memang membutuhkan penyimpulan kognitif dari peserta dan tidak
+  semua ada dalam PCAP.
 
 type: "StaticContainer"
 value: 1000

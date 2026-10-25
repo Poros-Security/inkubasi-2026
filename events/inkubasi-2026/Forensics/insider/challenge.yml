@@ -16,6 +16,8 @@ type: "StaticContainer"
 value: 1000
 visible: false   # ubah ke true saat kompetisi dimulai
 
+provide: "./dist"
+
 container:
   flagTemplate: "PorosCTF{1NGiN_m3Nj4Di_bLUE_tE4M_N4mUn_en9g4n_M3mbACa_tRaFfIC}"
   containerImage: "insider:latest"

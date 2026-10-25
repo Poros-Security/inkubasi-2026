@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
 
 name: "F1"
-author: "TODO"
+author: "bagas"
 
 description: |
   TODO: deskripsi belum ada di README.
@@ -11,7 +11,7 @@ value: 1000
 visible: false   # ubah ke true saat kompetisi dimulai
 
 container:
-  flagTemplate: "PorosCTF{TODO_flag_belum_ada_di_README}"
+  flagTemplate: "freepass26{S3rv3r_Act10ns_L34k_S0urc3_C0d3_!!!}"
   containerImage: "f1:latest"
   memoryLimit: 256
   cpuCount: 1

@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
 
 name: "git gud"
-author: "TODO"
+author: "2byte"
 
 description: |
   TODO: deskripsi belum ada di README.
@@ -9,6 +9,8 @@ description: |
 type: "StaticContainer"
 value: 1000
 visible: false   # ubah ke true saat kompetisi dimulai
+
+provide: "./dist"
 
 container:
   flagTemplate: "PorosCTF{ingin_seperti_mbah_linus_bikin_git_sendiri}"

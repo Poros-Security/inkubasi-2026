@@ -1,10 +1,24 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
 
 name: "AiArt"
-author: "Bagas"
+author: "bagas"
 
 description: |
-  TODO: deskripsi belum ada di README.
+  "At 2:47 AM, the AI Art Gallery severed all connections."
+
+  The digital exhibition facility, managed entirely by artificial intelligence, is
+  now under total lockdown. Not a single staff member can be reached, and the
+  guardian AI is rejecting all external access authorization.
+
+  We have hired you as a data extraction specialist. Your mission is to find any
+  remaining open portals, breach their digital perimeter, and uncover what is
+  truly happening inside.
+
+  One thing is certain: there is a highly valuable asset trapped within that you
+  must secure before the gallery's system decides to purge itself.
+
+hints:
+  - "Sebuah niat baik menerapkan Role-Based Access Control (RBAC) yang berujung petaka. https://gtfobins.org/"
 
 type: "StaticContainer"
 value: 1000

@@ -10,6 +10,8 @@ type: "StaticContainer"
 value: 1000
 visible: false   # ubah ke true saat kompetisi dimulai
 
+provide: "./dist"
+
 container:
   flagTemplate: "PorosCTF{tolong_yang_lebih_brutal_dan_menantang_lagi_dong_dipenjaranya}"
   containerImage: "penjaruyv2:latest"
