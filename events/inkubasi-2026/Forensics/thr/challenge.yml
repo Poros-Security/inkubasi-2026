@@ -18,8 +18,10 @@ type: "StaticContainer"
 value: 1000
 visible: false   # ubah ke true saat kompetisi dimulai
 
+flags:
+  - "PorosCTF{jujur_541u7_d4n_ri5pegg_p4r4h_k410_4d4_y4n9_501v3_ch4113n93_ini_53m094_7hrmu_d4n_7hrku_53m4kin_b4ny4k_d4n_p15_k33p_up_y0ur_p3r5i573nc3}"
+
 container:
-  flagTemplate: "PorosCTF{jujur_541u7_d4n_ri5pegg_p4r4h_k410_4d4_y4n9_501v3_ch4113n93_ini_53m094_7hrmu_d4n_7hrku_53m4kin_b4ny4k_d4n_p15_k33p_up_y0ur_p3r5i573nc3}"
   containerImage: "thr:latest"
   memoryLimit: 256
   cpuCount: 1

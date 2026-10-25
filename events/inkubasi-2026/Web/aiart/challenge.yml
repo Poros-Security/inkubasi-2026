@@ -24,8 +24,10 @@ type: "StaticContainer"
 value: 1000
 visible: false   # ubah ke true saat kompetisi dimulai
 
+flags:
+  - "PorosCTF{React2Shell_with_privilege_escalation_10948318347183091475198}"
+
 container:
-  flagTemplate: "PorosCTF{React2Shell_with_privilege_escalation_10948318347183091475198}"
   containerImage: "aiart:latest"
   memoryLimit: 256
   cpuCount: 1

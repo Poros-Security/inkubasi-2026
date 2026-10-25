@@ -10,8 +10,10 @@ type: "StaticContainer"
 value: 1000
 visible: false   # ubah ke true saat kompetisi dimulai
 
+flags:
+  - "PorosCTF{34sy_a5_fuck_1dor_wait_f0r_th3_0thers_llmnx}"
+
 container:
-  flagTemplate: "PorosCTF{34sy_a5_fuck_1dor_wait_f0r_th3_0thers_llmnx}"
   containerImage: "statement:latest"
   memoryLimit: 256
   cpuCount: 1

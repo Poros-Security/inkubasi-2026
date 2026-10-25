@@ -10,8 +10,10 @@ type: "StaticContainer"
 value: 1000
 visible: false   # ubah ke true saat kompetisi dimulai
 
+flags:
+  - "PorosCTF{soUrc3_c0de_leak_W1th_1D0r_and_lF1_8495}"
+
 container:
-  flagTemplate: "PorosCTF{soUrc3_c0de_leak_W1th_1D0r_and_lF1_8495}"
   containerImage: "slopchat:latest"
   memoryLimit: 256
   cpuCount: 1

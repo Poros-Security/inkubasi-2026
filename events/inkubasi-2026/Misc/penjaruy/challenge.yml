@@ -10,8 +10,10 @@ type: "StaticContainer"
 value: 1000
 visible: false   # ubah ke true saat kompetisi dimulai
 
+flags:
+  - "PorosCTF{jujur_biar_category_miscnya_kepake}"
+
 container:
-  flagTemplate: "PorosCTF{jujur_biar_category_miscnya_kepake}"
   containerImage: "penjaruy:latest"
   memoryLimit: 256
   cpuCount: 1

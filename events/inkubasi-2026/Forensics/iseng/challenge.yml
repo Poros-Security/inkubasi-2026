@@ -13,8 +13,10 @@ type: "StaticContainer"
 value: 1000
 visible: false   # ubah ke true saat kompetisi dimulai
 
+flags:
+  - "PorosCTF{S3puH_BlU3_T34m_d4n_N3tw0rk_4n4lys1s_Harus_Join_ICN_Sih_Ini_ditunggu_yah_tahun_ini}"
+
 container:
-  flagTemplate: "PorosCTF{S3puH_BlU3_T34m_d4n_N3tw0rk_4n4lys1s_Harus_Join_ICN_Sih_Ini_ditunggu_yah_tahun_ini}"
   containerImage: "iseng:latest"
   memoryLimit: 256
   cpuCount: 1

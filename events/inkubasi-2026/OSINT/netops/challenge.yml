@@ -10,8 +10,10 @@ type: "StaticContainer"
 value: 1000
 visible: false   # ubah ke true saat kompetisi dimulai
 
+flags:
+  - "PorosCTF{doksing_dikit_ketua_kortim_poros_2026}"
+
 container:
-  flagTemplate: "PorosCTF{doksing_dikit_ketua_kortim_poros_2026}"
   containerImage: "netops:latest"
   memoryLimit: 256
   cpuCount: 1

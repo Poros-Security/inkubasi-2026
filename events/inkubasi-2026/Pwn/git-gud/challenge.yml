@@ -10,10 +10,12 @@ type: "StaticContainer"
 value: 1000
 visible: false   # ubah ke true saat kompetisi dimulai
 
+flags:
+  - "PorosCTF{ingin_seperti_mbah_linus_bikin_git_sendiri}"
+
 provide: "./dist"
 
 container:
-  flagTemplate: "PorosCTF{ingin_seperti_mbah_linus_bikin_git_sendiri}"
   containerImage: "git-gud:latest"
   memoryLimit: 256
   cpuCount: 1
