@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "mbg (inkubasi)"
+author: "2byte"
+
+description: |
+  mbg = my bini gwehj
+
+  ![alt text](image.png)
+
+type: "StaticContainer"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+container:
+  flagTemplate: "PorosCTF{53b3n3rny4_54y4_537uju_54m4_pr09r4m_MBG_74pi_k410_k3p4nj4n94nny4_my_bini_9w3hj}"
+  containerImage: "mbg-inkubasi:latest"
+  memoryLimit: 256
+  cpuCount: 1
+  storageLimit: 512
+  exposePort: 7777
+  enableTrafficCapture: false
+
+scripts:
+  start: cd src && docker build -t {{.slug}} .

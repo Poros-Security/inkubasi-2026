@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Admin Lapar"
+author: "RFB"
+
+description: |
+  Seorang admin pernah mengunjungi sebuah warung sederhana yang terkenal dan identik dengan hidangan hitam legendarisnya.
+
+  Ia sempat menyimpan catatan mengenai lokasi tempat tersebut di internet. Namun sayangnya halaman itu sudah dihapus dan tidak bisa diakses lagi.
+
+  Satu-satunya petunjuk yang tersisa hanyalah sebuah foto menu dari tempat tersebut yang tercoret sesuatu.
+
+  Jika kamu berhasil menemukan lokasi itu, ambillah tiga kata unik dari lokasi itu.
+
+  Setelah itu, rangkai tiga kata tersebut menggunakan format berikut:
+
+  ```
+  https://bit.ly/word1_word2_word3
+  ```
+  Namun berhati-hatilah…
+  Tidak semua halaman yang hilang benar-benar menghilang dari internet.
+
+type: "StaticAttachment"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+hints:
+  - "Lihat Baik Baik Menu nya ^^"
+  - "https://what3words.com/"
+  - "Jika halaman yang terbuka ternyata sudah dihapus, ingat bahwa ada layanan yang menyimpan arsip halaman lama di internet."
+
+flags:
+  - "PorosCTF{MAm4h_4kU_j490_05iN7_K4RN4_m4Kan_cuM1_h174M}"
+
+provide: "./dist"

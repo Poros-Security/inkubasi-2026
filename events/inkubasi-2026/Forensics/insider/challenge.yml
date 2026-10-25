@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "insider"
+author: "unlikeneptune"
+
+description: |
+  A serious alert went off on one of the internal servers of Tracen Academy's IT Division. The security team was able to record the network traffic while the incident was happening. 
+
+  Early analysis indicates that either a compromised internal device or a rogue employee might have tried to access another host on the same network without permission, and they might have actually succeeded. 
+
+  As a DFIR analyst, your job is to look into the captured traffic, piece together the timeline of the attack, and find out what transpired after the attacker established a presence.
+
+  `nc 10.34.9.100 6741`
+
+type: "StaticContainer"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+container:
+  flagTemplate: "PorosCTF{1NGiN_m3Nj4Di_bLUE_tE4M_N4mUn_en9g4n_M3mbACa_tRaFfIC}"
+  containerImage: "insider:latest"
+  memoryLimit: 256
+  cpuCount: 1
+  storageLimit: 512
+  exposePort: 6741
+  enableTrafficCapture: false
+
+scripts:
+  start: cd src && docker build -t {{.slug}} .

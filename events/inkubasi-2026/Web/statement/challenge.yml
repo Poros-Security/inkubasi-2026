@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "statement"
+author: "TODO"
+
+description: |
+  TODO: deskripsi belum ada di README.
+
+type: "StaticContainer"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+container:
+  flagTemplate: "PorosCTF{34sy_a5_fuck_1dor_wait_f0r_th3_0thers_llmnx}"
+  containerImage: "statement:latest"
+  memoryLimit: 256
+  cpuCount: 1
+  storageLimit: 512
+  exposePort: 80
+  enableTrafficCapture: false
+
+scripts:
+  start: cd src/app && docker build -t {{.slug}} .

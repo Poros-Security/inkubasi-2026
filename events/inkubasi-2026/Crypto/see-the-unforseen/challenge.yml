@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "see the unforseen"
+author: "2byte"
+
+description: |
+  when yh jago kripto kyk ariq ardian dan chairman
+
+type: "StaticContainer"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+container:
+  flagTemplate: "PorosCTF{mff_k1_ch411ny4_700_345y_94_53j490_4riq_4rdi4n_54m4_ch4irm4n}"
+  containerImage: "see-the-unforseen:latest"
+  memoryLimit: 256
+  cpuCount: 1
+  storageLimit: 512
+  exposePort: 4545
+  enableTrafficCapture: false
+
+scripts:
+  start: cd src && docker build -t {{.slug}} .

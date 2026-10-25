@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See The Unforeseen</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #0a0610;
+            color: #e8dcc8;
+            font-family: 'Crimson Text', serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(88, 28, 135, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(168, 85, 247, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px; height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle var(--duration) ease-in-out infinite;
+            opacity: 0;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: var(--max-opacity); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 30px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .eye-symbol {
+            font-size: 4em;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.6));
+        }
+
+        h1 {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 2.4em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #c084fc, #e9d5ff, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+            letter-spacing: 3px;
+        }
+
+        .tagline {
+            font-family: 'Cinzel', serif;
+            font-size: 0.95em;
+            color: #9d8abf;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0;
+            color: #6b4c8a;
+            font-size: 0.85em;
+            letter-spacing: 3px;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #6b4c8a, transparent);
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1em;
+            color: #a78bfa;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(139, 92, 246, 0.4), transparent);
+        }
+
+        .magic-numbers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 10px;
+        }
+
+        .magic-card {
+            background: rgba(30, 15, 50, 0.6);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 8px;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s;
+        }
+
+        .magic-card:hover {
+            border-color: rgba(168, 85, 247, 0.5);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.1);
+        }
+
+        .card-index {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.4em;
+            color: #7c3aed;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .card-value {
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            color: #d8b4fe;
+            word-break: break-all;
+        }
+
+        .cipher-box {
+            background: rgba(15, 5, 30, 0.8);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .cipher-row {
+            margin-bottom: 18px;
+        }
+
+        .cipher-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .cipher-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85em;
+            color: #8b6cc0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .cipher-value {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            color: #c9a0ff;
+            word-break: break-all;
+            line-height: 1.5;
+            padding: 10px 14px;
+            background: rgba(88, 28, 135, 0.1);
+            border-radius: 6px;
+            border-left: 3px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .oracle-form {
+            background: rgba(15, 5, 30, 0.8);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .form-hint {
+            color: #9d8abf;
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .oracle-input {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(30, 15, 50, 0.6);
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            border-radius: 8px;
+            color: #d8b4fe;
+            font-family: 'Courier New', monospace;
+            font-size: 1em;
+            outline: none;
+            margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+
+        .oracle-input:focus {
+            border-color: #a855f7;
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.15);
+        }
+
+        .oracle-input::placeholder {
+            color: #5a4575;
+        }
+
+        .oracle-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, rgba(88, 28, 135, 0.6), rgba(139, 92, 246, 0.3));
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            border-radius: 8px;
+            color: #e9d5ff;
+            font-family: 'Cinzel', serif;
+            font-size: 1.05em;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .oracle-btn:hover {
+            background: linear-gradient(135deg, rgba(109, 40, 160, 0.7), rgba(159, 112, 255, 0.4));
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.2);
+        }
+
+        .result {
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .result.success {
+            background: linear-gradient(135deg, rgba(16, 80, 40, 0.3), rgba(20, 60, 30, 0.6));
+            border: 1px solid rgba(74, 222, 128, 0.3);
+        }
+
+        .result.error {
+            background: linear-gradient(135deg, rgba(80, 16, 16, 0.3), rgba(60, 20, 20, 0.6));
+            border: 1px solid rgba(248, 113, 113, 0.3);
+        }
+
+        .result-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .result-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .result.success .result-title { color: #86efac; }
+        .result.error .result-title { color: #fca5a5; }
+
+        .result-flag {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            color: #4ade80;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px 20px;
+            border-radius: 8px;
+            word-break: break-all;
+            margin-bottom: 20px;
+        }
+
+        .retry-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #9d8abf;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9em;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+        }
+
+        .retry-link:hover {
+            color: #c084fc;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #4a3666;
+            font-size: 0.85em;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+        <div class="header">
+            <div class="eye-symbol">&#x1F441;</div>
+            <h1>See The Unforeseen</h1>
+            <p class="tagline">The stars have spoken</p>
+        </div>
+
+        {{CHALLENGE}}
+        {{RESULT}}
+
+        <div class="footer">
+            &#x2727; the unseen hand guides those who dare to look &#x2727;
+        </div>
+    </div>
+
+    <script>
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 80; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.setProperty('--duration', (2 + Math.random() * 4) + 's');
+            star.style.setProperty('--max-opacity', (0.3 + Math.random() * 0.7).toString());
+            star.style.animationDelay = Math.random() * 4 + 's';
+            star.style.width = star.style.height = (1 + Math.random() * 2) + 'px';
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+[mysqld]
+bind-address = 0.0.0.0
+local_infile = 0
+skip-name-resolve = 1

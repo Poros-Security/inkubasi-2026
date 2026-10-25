@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "AiArt"
+author: "Bagas"
+
+description: |
+  TODO: deskripsi belum ada di README.
+
+type: "StaticContainer"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+container:
+  flagTemplate: "PorosCTF{React2Shell_with_privilege_escalation_10948318347183091475198}"
+  containerImage: "aiart:latest"
+  memoryLimit: 256
+  cpuCount: 1
+  storageLimit: 512
+  exposePort: 7005
+  enableTrafficCapture: false
+
+scripts:
+  start: cd src && docker build -t {{.slug}} .

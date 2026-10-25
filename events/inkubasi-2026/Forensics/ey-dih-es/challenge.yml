@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "ey dih es"
+author: "2byte"
+
+description: |
+  jujur kepikiran pas liat modul laprak ki
+
+type: "StaticContainer"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+container:
+  flagTemplate: "PorosCTF{7bh_ini_ch411_d4p37_in5pir45i_k4r3n4_1i47_m0du1_pr4k7ikum_KI_TIF_73rim4k45ih_IC33N}"
+  containerImage: "ey-dih-es:latest"
+  memoryLimit: 256
+  cpuCount: 1
+  storageLimit: 512
+  exposePort: 3636
+  enableTrafficCapture: false
+
+scripts:
+  start: cd src && docker build -t {{.slug}} .

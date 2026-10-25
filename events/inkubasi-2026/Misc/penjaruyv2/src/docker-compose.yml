@@ -1,0 +1,5 @@
+services:
+  misc-flaskjail:
+    build: .
+    ports:
+      - 7772:7772

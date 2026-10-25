@@ -1,0 +1,19 @@
+services:
+  web:
+    build: .
+    container_name: ctf-55182
+    ports:
+      - "7005:7005"
+    restart: always
+    tty: true         
+
+    read_only: true
+    tmpfs:
+      - /tmp
+
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+          pids: 150

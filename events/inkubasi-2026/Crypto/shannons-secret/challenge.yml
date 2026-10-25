@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Shannons Secret"
+author: "RFB"
+
+description: |
+  Tahun 2031. Dunia kriptografi digemparkan oleh kemunculan seorang hacker misterius bernama Shannon.
+
+  Ia mengklaim telah menciptakan cipher sempurna terinspirasi dari teori information-theoretic security milik Claude Shannon.
+
+  “Tidak ada yang bisa membobol ini,” tulisnya di forum underground.
+
+  Namun agen intelijen berhasil mencegat dua transmisi terenkripsi yang dikirim Shannon dalam satu sesi menggunakan sistem buatannya sendiri.
+
+  Apakah cipher ini benar-benar sempurna?
+
+  Temukan kelemahannya dan ungkap pesan rahasianya.
+
+type: "StaticAttachment"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+hints:
+  - "lihat code chall baik-baik"
+  - "XOR"
+  - "K = C ⊕ P → jadi P = ?"
+
+flags:
+  - "PorosCTF{m4nt4p_br0_b7w_9k_5U1I7k4n_y4?_h3h3}"
+
+provide: "./dist"

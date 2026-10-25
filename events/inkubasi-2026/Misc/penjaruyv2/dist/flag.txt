@@ -1,0 +1,1 @@
+POROSCTF{local_flag}

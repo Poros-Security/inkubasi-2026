@@ -1,0 +1,1 @@
+PorosCTF{React2Shell_with_privilege_escalation_10948318347183091475198}

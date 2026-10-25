@@ -1,0 +1,62 @@
+name: gapura
+
+services:
+  web:
+    build:
+      context: ./web
+    container_name: gapura-web
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      APACHE_SERVER_ADMIN: postmaster@localhost
+      DB_ACCESS_HOST: ${DB_ACCESS_HOST}
+      DB_ACCESS_PORT: ${DB_PORT:-13306}
+      DB_HOST: db
+      DB_NAME: goypurea_yube
+      DB_PASSWORD: ""
+      DB_USER: postmaster
+    ports:
+      - "${WEB_PORT:-18080}:80"
+    networks:
+      - ctf-net
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  db:
+    build:
+      context: ./db
+    container_name: gapura-db
+    restart: unless-stopped
+    environment:
+      FLAG: ${FLAG:-}
+      MARIADB_DATABASE: goypurea_yube
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD:-rootpass}
+    ports:
+      - "${DB_PORT:-13306}:3306"
+    networks:
+      - ctf-net
+    volumes:
+      - db-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  ctf-net:
+    driver: bridge
+
+volumes:
+  db-data:

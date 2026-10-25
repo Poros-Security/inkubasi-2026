@@ -1,0 +1,12 @@
+services:
+  git_gut:
+    build: .
+    ports:
+      - "6769:6769"
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:false
+    read_only: true
+    tmpfs:
+      - /tmp:mode=1733
+      - /run

@@ -1,0 +1,9 @@
+services:
+  vulnerable-app:
+    build: ./
+    container_name: react-cve-f1
+    ports:
+      - "7003:3000" # Host port 7003 diarahkan ke Container port 3000
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped

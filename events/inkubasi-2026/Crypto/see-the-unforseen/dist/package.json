@@ -1,0 +1,14 @@
+{
+  "name": "see-the-unforeseen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "chall.js",
+  "scripts": {
+    "start": "node chall.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "seedrandom": "^3.0.5",
+    "big-integer": "^1.6.51"
+  }
+}

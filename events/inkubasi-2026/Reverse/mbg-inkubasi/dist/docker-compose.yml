@@ -1,0 +1,9 @@
+services:
+  mbg:
+    build: .
+    ports:
+      - "7777:7777"
+    restart: unless-stopped
+    read_only: true
+    security_opt:
+      - no-new-privileges:true

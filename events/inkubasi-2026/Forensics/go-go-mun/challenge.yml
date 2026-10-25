@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dimasma0305/gzcli/refs/heads/main/internal/template/templates/others/ctf-template/.gzctf/challenge.schema.yaml
+
+name: "Go, Go, Mun!"
+author: "unlikeneptune"
+
+description: |
+  Have you ever pondered what your surroundings disclose to you?
+
+  URL: https://drive.google.com/file/d/14cI2bTRRgOPEETp9s4S4mk_a780E3RI7/view?usp=sharing
+  <br>SHA256 (archive): `bbf23284823c1b0a7213e7ed82032214c2ab05437a6a03f6cf94c59b8a723f7e`
+  <br>Archive password: `3915a0e02a8d52dd1b3bf4201adec68a`
+
+  **RESOURCES**:<br>
+  [Cheatsheet](https://github.com/unlikeneptunev/Volatility3-CheatSheet)
+  [Contoh soal](https://)
+
+  Author: **unlikeneptune**
+
+type: "StaticAttachment"
+value: 1000
+visible: false   # ubah ke true saat kompetisi dimulai
+
+hints:
+  - "Timestamps are everything"
+
+flags:
+  - "PorosCTF{Recover_endurance_and_moderately_increase_velocity_with_newfound_resolve_when_in_midpack_around_halfway_through_the_race.}"

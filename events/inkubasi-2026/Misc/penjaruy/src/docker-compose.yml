@@ -1,0 +1,10 @@
+services:
+  jail1:
+    build: .
+    container_name: penjara
+    ports:
+      - "7771:7771"
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
